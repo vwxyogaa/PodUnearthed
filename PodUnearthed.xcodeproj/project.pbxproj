@@ -9,14 +9,19 @@
 /* Begin PBXBuildFile section */
 		BC3CEC762ACC4CAB00A330A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC752ACC4CAB00A330A9 /* AppDelegate.swift */; };
 		BC3CEC782ACC4CAB00A330A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC772ACC4CAB00A330A9 /* SceneDelegate.swift */; };
-		BC3CEC7A2ACC4CAB00A330A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC792ACC4CAB00A330A9 /* ViewController.swift */; };
-		BC3CEC7D2ACC4CAB00A330A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3CEC7B2ACC4CAB00A330A9 /* Main.storyboard */; };
 		BC3CEC802ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC7E2ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld */; };
 		BC3CEC822ACC4CAC00A330A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC3CEC812ACC4CAC00A330A9 /* Assets.xcassets */; };
 		BC3CEC852ACC4CAC00A330A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC3CEC832ACC4CAC00A330A9 /* LaunchScreen.storyboard */; };
 		BC3CEC902ACC4CAD00A330A9 /* PodUnearthedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC8F2ACC4CAD00A330A9 /* PodUnearthedTests.swift */; };
 		BC3CEC9A2ACC4CAD00A330A9 /* PodUnearthedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC992ACC4CAD00A330A9 /* PodUnearthedUITests.swift */; };
 		BC3CEC9C2ACC4CAD00A330A9 /* PodUnearthedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC9B2ACC4CAD00A330A9 /* PodUnearthedUITestsLaunchTests.swift */; };
+		BC3CECB02ACC501600A330A9 /* PodcastListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECAE2ACC501600A330A9 /* PodcastListViewController.swift */; };
+		BC3CECB12ACC501600A330A9 /* PodcastListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3CECAF2ACC501600A330A9 /* PodcastListViewController.xib */; };
+		BC3CECB82ACC506600A330A9 /* PodcastListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECB72ACC506600A330A9 /* PodcastListInteractor.swift */; };
+		BC3CECBA2ACC506D00A330A9 /* PodcastListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECB92ACC506D00A330A9 /* PodcastListPresenter.swift */; };
+		BC3CECBC2ACC509300A330A9 /* PodcastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECBB2ACC509300A330A9 /* PodcastResponse.swift */; };
+		BC3CECBE2ACC509B00A330A9 /* PodcastListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECBD2ACC509B00A330A9 /* PodcastListRouter.swift */; };
+		BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECC12ACC50B400A330A9 /* PodcastListProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +45,6 @@
 		BC3CEC722ACC4CAB00A330A9 /* PodUnearthed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodUnearthed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3CEC752ACC4CAB00A330A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3CEC772ACC4CAB00A330A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BC3CEC792ACC4CAB00A330A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BC3CEC7C2ACC4CAB00A330A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC3CEC7F2ACC4CAB00A330A9 /* PodUnearthed.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodUnearthed.xcdatamodel; sourceTree = "<group>"; };
 		BC3CEC812ACC4CAC00A330A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC3CEC842ACC4CAC00A330A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,13 @@
 		BC3CEC952ACC4CAD00A330A9 /* PodUnearthedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodUnearthedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3CEC992ACC4CAD00A330A9 /* PodUnearthedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodUnearthedUITests.swift; sourceTree = "<group>"; };
 		BC3CEC9B2ACC4CAD00A330A9 /* PodUnearthedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodUnearthedUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BC3CECAE2ACC501600A330A9 /* PodcastListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListViewController.swift; sourceTree = "<group>"; };
+		BC3CECAF2ACC501600A330A9 /* PodcastListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastListViewController.xib; sourceTree = "<group>"; };
+		BC3CECB72ACC506600A330A9 /* PodcastListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListInteractor.swift; sourceTree = "<group>"; };
+		BC3CECB92ACC506D00A330A9 /* PodcastListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListPresenter.swift; sourceTree = "<group>"; };
+		BC3CECBB2ACC509300A330A9 /* PodcastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastResponse.swift; sourceTree = "<group>"; };
+		BC3CECBD2ACC509B00A330A9 /* PodcastListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListRouter.swift; sourceTree = "<group>"; };
+		BC3CECC12ACC50B400A330A9 /* PodcastListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +111,9 @@
 		BC3CEC742ACC4CAB00A330A9 /* PodUnearthed */ = {
 			isa = PBXGroup;
 			children = (
-				BC3CEC752ACC4CAB00A330A9 /* AppDelegate.swift */,
-				BC3CEC772ACC4CAB00A330A9 /* SceneDelegate.swift */,
-				BC3CEC792ACC4CAB00A330A9 /* ViewController.swift */,
-				BC3CEC7B2ACC4CAB00A330A9 /* Main.storyboard */,
-				BC3CEC812ACC4CAC00A330A9 /* Assets.xcassets */,
-				BC3CEC832ACC4CAC00A330A9 /* LaunchScreen.storyboard */,
+				BC3CECA82ACC4DC000A330A9 /* Application */,
+				BC3CECAA2ACC4F2A00A330A9 /* Modules */,
+				BC3CECA92ACC4E1700A330A9 /* SupportingFiles */,
 				BC3CEC862ACC4CAC00A330A9 /* Info.plist */,
 				BC3CEC7E2ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld */,
 			);
@@ -128,6 +135,102 @@
 				BC3CEC9B2ACC4CAD00A330A9 /* PodUnearthedUITestsLaunchTests.swift */,
 			);
 			path = PodUnearthedUITests;
+			sourceTree = "<group>";
+		};
+		BC3CECA82ACC4DC000A330A9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CEC752ACC4CAB00A330A9 /* AppDelegate.swift */,
+				BC3CEC772ACC4CAB00A330A9 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		BC3CECA92ACC4E1700A330A9 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CEC812ACC4CAC00A330A9 /* Assets.xcassets */,
+				BC3CEC832ACC4CAC00A330A9 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		BC3CECAA2ACC4F2A00A330A9 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECAD2ACC4FC500A330A9 /* PodcastList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BC3CECAB2ACC4F3900A330A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECAC2ACC4F3A00A330A9 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC3CECAC2ACC4F3A00A330A9 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECAE2ACC501600A330A9 /* PodcastListViewController.swift */,
+				BC3CECAF2ACC501600A330A9 /* PodcastListViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BC3CECAD2ACC4FC500A330A9 /* PodcastList */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECAB2ACC4F3900A330A9 /* View */,
+				BC3CECB62ACC503700A330A9 /* Interactor */,
+				BC3CECB52ACC503300A330A9 /* Presenter */,
+				BC3CECB42ACC502E00A330A9 /* Entity */,
+				BC3CECB32ACC502C00A330A9 /* Router */,
+				BC3CECB22ACC502800A330A9 /* Protocols */,
+			);
+			path = PodcastList;
+			sourceTree = "<group>";
+		};
+		BC3CECB22ACC502800A330A9 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECC12ACC50B400A330A9 /* PodcastListProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BC3CECB32ACC502C00A330A9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECBD2ACC509B00A330A9 /* PodcastListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BC3CECB42ACC502E00A330A9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECBB2ACC509300A330A9 /* PodcastResponse.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		BC3CECB52ACC503300A330A9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECB92ACC506D00A330A9 /* PodcastListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BC3CECB62ACC503700A330A9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BC3CECB72ACC506600A330A9 /* PodcastListInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +337,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3CECB12ACC501600A330A9 /* PodcastListViewController.xib in Resources */,
 				BC3CEC852ACC4CAC00A330A9 /* LaunchScreen.storyboard in Resources */,
 				BC3CEC822ACC4CAC00A330A9 /* Assets.xcassets in Resources */,
-				BC3CEC7D2ACC4CAB00A330A9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,9 +365,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC3CEC802ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld in Sources */,
-				BC3CEC7A2ACC4CAB00A330A9 /* ViewController.swift in Sources */,
+				BC3CECB82ACC506600A330A9 /* PodcastListInteractor.swift in Sources */,
 				BC3CEC762ACC4CAB00A330A9 /* AppDelegate.swift in Sources */,
+				BC3CECBA2ACC506D00A330A9 /* PodcastListPresenter.swift in Sources */,
 				BC3CEC782ACC4CAB00A330A9 /* SceneDelegate.swift in Sources */,
+				BC3CECBE2ACC509B00A330A9 /* PodcastListRouter.swift in Sources */,
+				BC3CECBC2ACC509300A330A9 /* PodcastResponse.swift in Sources */,
+				BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */,
+				BC3CECB02ACC501600A330A9 /* PodcastListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +409,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BC3CEC7B2ACC4CAB00A330A9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BC3CEC7C2ACC4CAB00A330A9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BC3CEC832ACC4CAC00A330A9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -453,7 +553,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -484,7 +583,6 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
