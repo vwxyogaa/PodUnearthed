@@ -13,12 +13,15 @@
             <connections>
                 <outlet property="comedyLabel" destination="MSg-br-AFW" id="1Yw-dO-osq"/>
                 <outlet property="comedyListCollectionView" destination="KzW-6g-3g1" id="Gid-TA-Jn1"/>
+                <outlet property="comedyListCollectionViewHeightConstraint" destination="1BU-hb-XuV" id="Q9r-tm-tfe"/>
                 <outlet property="horrorLabel" destination="ONS-5x-MJv" id="r7w-lo-BO8"/>
                 <outlet property="horrorListCollectionView" destination="KAj-mr-Ufs" id="fgW-20-SzM"/>
+                <outlet property="horrorListCollectionViewHeightConstraint" destination="KUb-to-UNx" id="XFf-e4-lqC"/>
                 <outlet property="podcastSearchBar" destination="F2U-tH-j15" id="rjV-jX-1Xt"/>
                 <outlet property="scrollView" destination="7oH-ym-xr1" id="hdD-hg-Mvc"/>
                 <outlet property="sportLabel" destination="gss-yF-B6N" id="HPT-iZ-QAE"/>
                 <outlet property="sportListCollectionView" destination="ETV-VW-sTS" id="a3C-29-Ntq"/>
+                <outlet property="sportListCollectionViewHeightConstraint" destination="8sn-Ea-8J8" id="C1X-xn-EUY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,16 +50,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="264"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MSg-br-AFW">
-                                                    <rect key="frame" x="16" y="0.0" width="361" height="56"/>
+                                                    <rect key="frame" x="16" y="0.0" width="361" height="128"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KzW-6g-3g1">
-                                                    <rect key="frame" x="16" y="64" width="361" height="200"/>
+                                                    <rect key="frame" x="16" y="136" width="361" height="128"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="1BU-hb-XuV"/>
+                                                        <constraint firstAttribute="height" constant="128" id="1BU-hb-XuV"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qkF-vi-h0P">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -81,16 +84,16 @@
                                             <rect key="frame" x="0.0" y="272" width="393" height="264"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONS-5x-MJv">
-                                                    <rect key="frame" x="16" y="0.0" width="361" height="56"/>
+                                                    <rect key="frame" x="16" y="0.0" width="361" height="128"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="KAj-mr-Ufs">
-                                                    <rect key="frame" x="16" y="64" width="361" height="200"/>
+                                                    <rect key="frame" x="16" y="136" width="361" height="128"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="KUb-to-UNx"/>
+                                                        <constraint firstAttribute="height" constant="128" id="KUb-to-UNx"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MEy-KQ-B5N">
                                                         <size key="itemSize" width="128" height="128"/>
@@ -115,16 +118,16 @@
                                             <rect key="frame" x="0.0" y="544" width="393" height="264"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gss-yF-B6N">
-                                                    <rect key="frame" x="16" y="0.0" width="361" height="56"/>
+                                                    <rect key="frame" x="16" y="0.0" width="361" height="128"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ETV-VW-sTS">
-                                                    <rect key="frame" x="16" y="64" width="361" height="200"/>
+                                                    <rect key="frame" x="16" y="136" width="361" height="128"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="200" id="8sn-Ea-8J8"/>
+                                                        <constraint firstAttribute="height" constant="128" id="8sn-Ea-8J8"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e8v-9K-j33">
                                                         <size key="itemSize" width="128" height="128"/>
