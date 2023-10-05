@@ -21,9 +21,14 @@
 		BC3CECB12ACC501600A330A9 /* PodcastListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC3CECAF2ACC501600A330A9 /* PodcastListViewController.xib */; };
 		BC3CECB82ACC506600A330A9 /* PodcastListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECB72ACC506600A330A9 /* PodcastListInteractor.swift */; };
 		BC3CECBA2ACC506D00A330A9 /* PodcastListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECB92ACC506D00A330A9 /* PodcastListPresenter.swift */; };
-		BC3CECBC2ACC509300A330A9 /* PodcastResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECBB2ACC509300A330A9 /* PodcastResponse.swift */; };
+		BC3CECBC2ACC509300A330A9 /* PodcastListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECBB2ACC509300A330A9 /* PodcastListResponse.swift */; };
 		BC3CECBE2ACC509B00A330A9 /* PodcastListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECBD2ACC509B00A330A9 /* PodcastListRouter.swift */; };
 		BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CECC12ACC50B400A330A9 /* PodcastListProtocol.swift */; };
+		BC4A1FE82ACEA9B600A1FDD5 /* PodcastListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FE72ACEA9B600A1FDD5 /* PodcastListModel.swift */; };
+		BC4A1FEB2ACEAE6300A1FDD5 /* DataMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FEA2ACEAE6300A1FDD5 /* DataMapper.swift */; };
+		BC4A1FEF2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FED2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift */; };
+		BC4A1FF02ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4A1FEE2ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib */; };
+		BC4A1FF72ACECA5500A1FDD5 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FF62ACECA5500A1FDD5 /* UIImageView+Ext.swift */; };
 		F66A076763619D9F70DDBFDB /* Pods_PodUnearthed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6582398EF759B793F50FCD /* Pods_PodUnearthed.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,9 +74,14 @@
 		BC3CECAF2ACC501600A330A9 /* PodcastListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastListViewController.xib; sourceTree = "<group>"; };
 		BC3CECB72ACC506600A330A9 /* PodcastListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListInteractor.swift; sourceTree = "<group>"; };
 		BC3CECB92ACC506D00A330A9 /* PodcastListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListPresenter.swift; sourceTree = "<group>"; };
-		BC3CECBB2ACC509300A330A9 /* PodcastResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastResponse.swift; sourceTree = "<group>"; };
+		BC3CECBB2ACC509300A330A9 /* PodcastListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListResponse.swift; sourceTree = "<group>"; };
 		BC3CECBD2ACC509B00A330A9 /* PodcastListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListRouter.swift; sourceTree = "<group>"; };
 		BC3CECC12ACC50B400A330A9 /* PodcastListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListProtocol.swift; sourceTree = "<group>"; };
+		BC4A1FE72ACEA9B600A1FDD5 /* PodcastListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListModel.swift; sourceTree = "<group>"; };
+		BC4A1FEA2ACEAE6300A1FDD5 /* DataMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMapper.swift; sourceTree = "<group>"; };
+		BC4A1FED2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCollectionViewCell.swift; sourceTree = "<group>"; };
+		BC4A1FEE2ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCollectionViewCell.xib; sourceTree = "<group>"; };
+		BC4A1FF62ACECA5500A1FDD5 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
 		FF6582398EF759B793F50FCD /* Pods_PodUnearthed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodUnearthed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +163,7 @@
 			children = (
 				BC3CECA82ACC4DC000A330A9 /* Application */,
 				BC3CECAA2ACC4F2A00A330A9 /* Modules */,
+				BC4A1FE92ACEAE5800A1FDD5 /* Utilities */,
 				BC3CECA92ACC4E1700A330A9 /* SupportingFiles */,
 				BC3CEC862ACC4CAC00A330A9 /* Info.plist */,
 				BC3CEC7E2ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld */,
@@ -206,6 +217,7 @@
 		BC3CECAB2ACC4F3900A330A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC4A1FEC2ACEB61500A1FDD5 /* Cell */,
 				BC3CECAC2ACC4F3A00A330A9 /* ViewController */,
 			);
 			path = View;
@@ -252,7 +264,8 @@
 		BC3CECB42ACC502E00A330A9 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				BC3CECBB2ACC509300A330A9 /* PodcastResponse.swift */,
+				BC3CECBB2ACC509300A330A9 /* PodcastListResponse.swift */,
+				BC4A1FE72ACEA9B600A1FDD5 /* PodcastListModel.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -271,6 +284,32 @@
 				BC3CECB72ACC506600A330A9 /* PodcastListInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BC4A1FE92ACEAE5800A1FDD5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A1FF12ACEB73A00A1FDD5 /* Extensions */,
+				BC4A1FEA2ACEAE6300A1FDD5 /* DataMapper.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BC4A1FEC2ACEB61500A1FDD5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A1FED2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift */,
+				BC4A1FEE2ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BC4A1FF12ACEB73A00A1FDD5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A1FF62ACECA5500A1FDD5 /* UIImageView+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +424,7 @@
 				BC3CECB12ACC501600A330A9 /* PodcastListViewController.xib in Resources */,
 				BC3CEC852ACC4CAC00A330A9 /* LaunchScreen.storyboard in Resources */,
 				BC3CEC822ACC4CAC00A330A9 /* Assets.xcassets in Resources */,
+				BC4A1FF02ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,12 +554,16 @@
 			files = (
 				BC3CEC802ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld in Sources */,
 				BC3CECB82ACC506600A330A9 /* PodcastListInteractor.swift in Sources */,
+				BC4A1FE82ACEA9B600A1FDD5 /* PodcastListModel.swift in Sources */,
 				BC3CEC762ACC4CAB00A330A9 /* AppDelegate.swift in Sources */,
 				BC3CECBA2ACC506D00A330A9 /* PodcastListPresenter.swift in Sources */,
+				BC4A1FF72ACECA5500A1FDD5 /* UIImageView+Ext.swift in Sources */,
 				BC3CEC782ACC4CAB00A330A9 /* SceneDelegate.swift in Sources */,
 				BC3CECBE2ACC509B00A330A9 /* PodcastListRouter.swift in Sources */,
-				BC3CECBC2ACC509300A330A9 /* PodcastResponse.swift in Sources */,
+				BC4A1FEF2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift in Sources */,
+				BC3CECBC2ACC509300A330A9 /* PodcastListResponse.swift in Sources */,
 				BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */,
+				BC4A1FEB2ACEAE6300A1FDD5 /* DataMapper.swift in Sources */,
 				BC3CECB02ACC501600A330A9 /* PodcastListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +748,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -735,6 +780,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
