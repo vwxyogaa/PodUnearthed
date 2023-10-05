@@ -13,12 +13,15 @@ class PodcastListViewController: UIViewController {
     @IBOutlet weak var podcastSearchBar: UISearchBar!
     @IBOutlet weak var comedyLabel: UILabel!
     @IBOutlet weak var comedyListCollectionView: UICollectionView!
+    @IBOutlet weak var comedyListCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var horrorLabel: UILabel!
     @IBOutlet weak var horrorListCollectionView: UICollectionView!
+    @IBOutlet weak var horrorListCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var sportListCollectionView: UICollectionView!
+    @IBOutlet weak var sportListCollectionViewHeightConstraint: NSLayoutConstraint!
     
-    // MAKR: - Views
+    // MARK: - Views
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .white
@@ -58,6 +61,12 @@ class PodcastListViewController: UIViewController {
         sportListCollectionView.register(UINib(nibName: "PodcastCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "PodcastCollectionViewCell")
         sportListCollectionView.dataSource = self
         sportListCollectionView.delegate = self
+        
+        let cellHeight = (comedyListCollectionView.frame.width / 3) * 1.5
+        comedyListCollectionViewHeightConstraint.constant = cellHeight
+        horrorListCollectionViewHeightConstraint.constant = cellHeight
+        sportListCollectionViewHeightConstraint.constant = cellHeight
+        self.view.layoutIfNeeded()
     }
     
     // MARK: - Actions
@@ -107,26 +116,17 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case comedyListCollectionView:
-            let paddingSpace: CGFloat = 15 * (2 - 1) // space for 1 gap between 2 columns
-            let availableWidth = collectionView.frame.width - paddingSpace
-            let widthPerItem = availableWidth / 2
-            let heightPerItem = widthPerItem * 1.5  // Make the height 1.5 times the width to create a rectangular cell that extends downwards
-            
-            return CGSize(width: widthPerItem, height: heightPerItem)
+            let width = collectionView.frame.width / 3 // Divide by 3 columns
+            let height = width * 1.5 // Height is longer than width
+            return CGSize(width: width, height: height)
         case horrorListCollectionView:
-            let paddingSpace: CGFloat = 15 * (2 - 1) // space for 1 gap between 2 columns
-            let availableWidth = collectionView.frame.width - paddingSpace
-            let widthPerItem = availableWidth / 2
-            let heightPerItem = widthPerItem * 1.5  // Make the height 1.5 times the width to create a rectangular cell that extends downwards
-            
-            return CGSize(width: widthPerItem, height: heightPerItem)
+            let width = collectionView.frame.width / 3 // Divide by 3 columns
+            let height = width * 1.5 // Height is longer than width
+            return CGSize(width: width, height: height)
         case sportListCollectionView:
-            let paddingSpace: CGFloat = 15 * (2 - 1) // space for 1 gap between 2 columns
-            let availableWidth = collectionView.frame.width - paddingSpace
-            let widthPerItem = availableWidth / 2
-            let heightPerItem = widthPerItem * 1.5  // Make the height 1.5 times the width to create a rectangular cell that extends downwards
-            
-            return CGSize(width: widthPerItem, height: heightPerItem)
+            let width = collectionView.frame.width / 3 // Divide by 3 columns
+            let height = width * 1.5 // Height is longer than width
+            return CGSize(width: width, height: height)
         default:
             break
         }
