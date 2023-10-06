@@ -113,6 +113,22 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
         return UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView {
+        case comedyListCollectionView:
+            guard let comedy = presenter?.getPodcastComedy() else { return }
+            print("comedy clicked: \(indexPath.row + 1): \(comedy)")
+        case horrorListCollectionView:
+            guard let horror = presenter?.getPodcastHorror() else { return }
+            print("horror clicked: \(indexPath.row + 1): \(horror)")
+        case sportListCollectionView:
+            guard let sport = presenter?.getPodcastSport() else { return }
+            print("sport clicked: \(indexPath.row + 1): \(sport)")
+        default:
+            break
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case comedyListCollectionView:
