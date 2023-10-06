@@ -17,11 +17,11 @@ class PodcastCollectionViewCell: UICollectionViewCell {
     // MARK: - Lifecycles
     override func awakeFromNib() {
         super.awakeFromNib()
-        configureViews()
+        initViews()
     }
     
     // MARK: - Methods
-    private func configureViews() {
+    private func initViews() {
         containerView.layer.cornerRadius = 12
         containerView.layer.masksToBounds = true
         
@@ -35,7 +35,7 @@ class PodcastCollectionViewCell: UICollectionViewCell {
         } else {
             self.artworkImageView.backgroundColor = .darkGray
         }
-        trackNameLabel.text = trackName
-        artistNameLabel.text = artistName
+        trackNameLabel.text = trackName ?? "-"
+        artistNameLabel.text = artistName ?? "-"
     }
 }

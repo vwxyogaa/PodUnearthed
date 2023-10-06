@@ -27,9 +27,9 @@ protocol PodcastListInteractorToPresenterProtocol: AnyObject {
 
 protocol PodcastListPresenterToInteractorProtocol: AnyObject {
     var presenter: PodcastListInteractorToPresenterProtocol? { get set }
-    var podcastComedy: PodcastListModel? { get }
-    var podcastHorror: PodcastListModel? { get }
-    var podcastSport: PodcastListModel? { get }
+    var podcastComedy: [PodcastListModel]? { get }
+    var podcastHorror: [PodcastListModel]? { get }
+    var podcastSport: [PodcastListModel]? { get }
     
     func fetchPodcastComedy()
     func fetchPodcastHorror()
@@ -47,9 +47,9 @@ protocol PodcastListViewToPresenterProtocol: AnyObject {
     
     func updateView()
     func getPodcastComedyCount() -> Int?
-    func getPodcastComedy() -> PodcastListModel?
+    func getPodcastComedy(index: Int) -> PodcastListModel?
     func getPodcastHorrorCount() -> Int?
-    func getPodcastHorror() -> PodcastListModel?
+    func getPodcastHorror(index: Int) -> PodcastListModel?
     func getPodcastSportCount() -> Int?
-    func getPodcastSport() -> PodcastListModel?
+    func getPodcastSport(index: Int) -> PodcastListModel?
 }

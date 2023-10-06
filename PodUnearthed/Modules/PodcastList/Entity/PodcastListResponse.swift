@@ -5,8 +5,6 @@
 //  Created by Panji Yoga on 03/10/23.
 //
 
-import Foundation
-
 struct PodcastListResponse: Codable {
     let resultCount: Int?
     let results: [Podcast]?

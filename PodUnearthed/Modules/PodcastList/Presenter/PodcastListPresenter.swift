@@ -22,29 +22,29 @@ class PodcastListPresenter: PodcastListViewToPresenterProtocol {
     
     // MARK: - Comedy
     func getPodcastComedyCount() -> Int? {
-        return interactor?.podcastComedy?.trackId?.count
+        return interactor?.podcastComedy?.count
     }
     
-    func getPodcastComedy() -> PodcastListModel? {
-        return interactor?.podcastComedy
+    func getPodcastComedy(index: Int) -> PodcastListModel? {
+        return interactor?.podcastComedy?[index]
     }
     
     // MARK: - Horror
     func getPodcastHorrorCount() -> Int? {
-        return interactor?.podcastHorror?.trackId?.count
+        return interactor?.podcastHorror?.count
     }
     
-    func getPodcastHorror() -> PodcastListModel? {
-        return interactor?.podcastHorror
+    func getPodcastHorror(index: Int) -> PodcastListModel? {
+        return interactor?.podcastHorror?[index]
     }
     
     // MARK: - Sport
     func getPodcastSportCount() -> Int? {
-        return interactor?.podcastSport?.trackId?.count
+        return interactor?.podcastSport?.count
     }
     
-    func getPodcastSport() -> PodcastListModel? {
-        return interactor?.podcastSport
+    func getPodcastSport(index: Int) -> PodcastListModel? {
+        return interactor?.podcastSport?[index]
     }
 }
 

@@ -9,6 +9,7 @@ target 'PodUnearthed' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'netfox'
+  pod 'FeedKit'
 
   target 'PodUnearthedTests' do
     inherit! :search_paths
