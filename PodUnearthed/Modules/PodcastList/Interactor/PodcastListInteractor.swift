@@ -10,9 +10,9 @@ import Alamofire
 class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     // MARK: - Properties
     var presenter: PodcastListInteractorToPresenterProtocol?
-    var podcastComedy: PodcastListModel?
-    var podcastHorror: PodcastListModel?
-    var podcastSport: PodcastListModel?
+    var podcastComedy: [PodcastListModel]?
+    var podcastHorror: [PodcastListModel]?
+    var podcastSport: [PodcastListModel]?
     
     // MARK: - Methods
     func fetchPodcastComedy() {

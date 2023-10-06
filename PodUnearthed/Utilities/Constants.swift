@@ -8,5 +8,6 @@
 import Foundation
 
 struct Constants {
+    static let DefaultLocale = Locale(identifier: "id_ID")
     static let baseUrl = "https://itunes.apple.com"
 }

@@ -35,13 +35,13 @@ class PodcastListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Podcast Unearthed"
-        configureViews()
+        initViews()
         initColectionView()
         presenter?.updateView()
     }
     
     // MARK: - Methods
-    private func configureViews() {
+    private func initViews() {
         scrollView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
@@ -96,16 +96,16 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch collectionView {
         case comedyListCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCollectionViewCell", for: indexPath) as? PodcastCollectionViewCell, let comedy = presenter?.getPodcastComedy(), let artworkUrl100 = comedy.artworkUrl100 else { return UICollectionViewCell() }
-            cell.configureContent(artworkImage: artworkUrl100[indexPath.row], trackName: comedy.trackName?[indexPath.row], artistName: comedy.artistName?[indexPath.row])
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCollectionViewCell", for: indexPath) as? PodcastCollectionViewCell, let comedy = presenter?.getPodcastComedy(index: indexPath.row), let artworkUrl100 = comedy.artworkUrl100 else { return UICollectionViewCell() }
+            cell.configureContent(artworkImage: artworkUrl100, trackName: comedy.trackName, artistName: comedy.artistName)
             return cell
         case horrorListCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCollectionViewCell", for: indexPath) as? PodcastCollectionViewCell, let horror = presenter?.getPodcastHorror(), let artworkUrl100 = horror.artworkUrl100 else { return UICollectionViewCell() }
-            cell.configureContent(artworkImage: artworkUrl100[indexPath.row], trackName: horror.trackName?[indexPath.row], artistName: horror.artistName?[indexPath.row])
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCollectionViewCell", for: indexPath) as? PodcastCollectionViewCell, let horror = presenter?.getPodcastHorror(index: indexPath.row), let artworkUrl100 = horror.artworkUrl100 else { return UICollectionViewCell() }
+            cell.configureContent(artworkImage: artworkUrl100, trackName: horror.trackName, artistName: horror.artistName)
             return cell
         case sportListCollectionView:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCollectionViewCell", for: indexPath) as? PodcastCollectionViewCell, let sport = presenter?.getPodcastSport(), let artworkUrl100 = sport.artworkUrl100 else { return UICollectionViewCell() }
-            cell.configureContent(artworkImage: artworkUrl100[indexPath.row], trackName: sport.trackName?[indexPath.row], artistName: sport.artistName?[indexPath.row])
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PodcastCollectionViewCell", for: indexPath) as? PodcastCollectionViewCell, let sport = presenter?.getPodcastSport(index: indexPath.row), let artworkUrl100 = sport.artworkUrl100 else { return UICollectionViewCell() }
+            cell.configureContent(artworkImage: artworkUrl100, trackName: sport.trackName, artistName: sport.artistName)
             return cell
         default:
             break
@@ -116,14 +116,17 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case comedyListCollectionView:
-            guard let comedy = presenter?.getPodcastComedy() else { return }
-            print("comedy clicked: \(indexPath.row + 1): \(comedy)")
+            guard let comedy = presenter?.getPodcastComedy(index: indexPath.row) else { return }
+            let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: comedy)
+            navigationController?.pushViewController(podcastDetailViewController, animated: true)
         case horrorListCollectionView:
-            guard let horror = presenter?.getPodcastHorror() else { return }
-            print("horror clicked: \(indexPath.row + 1): \(horror)")
+            guard let horror = presenter?.getPodcastHorror(index: indexPath.row) else { return }
+            let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: horror)
+            navigationController?.pushViewController(podcastDetailViewController, animated: true)
         case sportListCollectionView:
-            guard let sport = presenter?.getPodcastSport() else { return }
-            print("sport clicked: \(indexPath.row + 1): \(sport)")
+            guard let sport = presenter?.getPodcastSport(index: indexPath.row) else { return }
+            let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: sport)
+            navigationController?.pushViewController(podcastDetailViewController, animated: true)
         default:
             break
         }
