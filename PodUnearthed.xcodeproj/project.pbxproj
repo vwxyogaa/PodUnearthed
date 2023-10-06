@@ -29,6 +29,7 @@
 		BC4A1FEF2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FED2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift */; };
 		BC4A1FF02ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4A1FEE2ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib */; };
 		BC4A1FF72ACECA5500A1FDD5 /* UIImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FF62ACECA5500A1FDD5 /* UIImageView+Ext.swift */; };
+		BC4A1FF92ACFF86A00A1FDD5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A1FF82ACFF86A00A1FDD5 /* Constants.swift */; };
 		F66A076763619D9F70DDBFDB /* Pods_PodUnearthed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6582398EF759B793F50FCD /* Pods_PodUnearthed.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		BC4A1FED2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCollectionViewCell.swift; sourceTree = "<group>"; };
 		BC4A1FEE2ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastCollectionViewCell.xib; sourceTree = "<group>"; };
 		BC4A1FF62ACECA5500A1FDD5 /* UIImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ext.swift"; sourceTree = "<group>"; };
+		BC4A1FF82ACFF86A00A1FDD5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FF6582398EF759B793F50FCD /* Pods_PodUnearthed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodUnearthed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -291,6 +293,7 @@
 			children = (
 				BC4A1FF12ACEB73A00A1FDD5 /* Extensions */,
 				BC4A1FEA2ACEAE6300A1FDD5 /* DataMapper.swift */,
+				BC4A1FF82ACFF86A00A1FDD5 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				BC4A1FEF2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift in Sources */,
 				BC3CECBC2ACC509300A330A9 /* PodcastListResponse.swift in Sources */,
 				BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */,
+				BC4A1FF92ACFF86A00A1FDD5 /* Constants.swift in Sources */,
 				BC4A1FEB2ACEAE6300A1FDD5 /* DataMapper.swift in Sources */,
 				BC3CECB02ACC501600A330A9 /* PodcastListViewController.swift in Sources */,
 			);

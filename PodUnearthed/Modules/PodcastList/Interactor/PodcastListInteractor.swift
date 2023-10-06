@@ -9,7 +9,6 @@ import Alamofire
 
 class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     // MARK: - Properties
-    let baseUrl = "https://itunes.apple.com/search"
     var presenter: PodcastListInteractorToPresenterProtocol?
     var podcastComedy: PodcastListModel?
     var podcastHorror: PodcastListModel?
@@ -17,7 +16,7 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     
     // MARK: - Methods
     func fetchPodcastComedy() {
-        let url = baseUrl + "?term=comedy&country=id&limit=10"
+        let url = Constants.baseUrl + "/search?term=comedy&country=id&limit=10"
         AF.request(url, method: .get)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
@@ -34,7 +33,7 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     }
     
     func fetchPodcastHorror() {
-        let url = baseUrl + "?term=horror&country=id&limit=10"
+        let url = Constants.baseUrl + "/search?term=horror&country=id&limit=10"
         AF.request(url, method: .get)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
@@ -51,7 +50,7 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     }
     
     func fetchPodcastSport() {
-        let url = baseUrl + "?term=sport&country=id&limit=10"
+        let url = Constants.baseUrl + "/search?term=sport&country=id&limit=10"
         AF.request(url, method: .get)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
