@@ -109,6 +109,17 @@ extension PodcastDetailViewController: UITableViewDataSource, UITableViewDelegat
 
 // MARK: - PodcastDetailPresenterToViewProtocol
 extension PodcastDetailViewController: PodcastDetailPresenterToViewProtocol {
+    func showLoading(isLoading: Bool) {
+        switch isLoading {
+        case false:
+            self.manageLoadingActivity(isLoading: false)
+            self.episodeTableView.isHidden = false
+        case true:
+            self.manageLoadingActivity(isLoading: true)
+            self.episodeTableView.isHidden = true
+        }
+    }
+    
     func showPodcastDetail() {
         let podcast = presenter?.getPodcastDetail()
         if let imageUrl = podcast?.artworkUrl600, !imageUrl.isEmpty {

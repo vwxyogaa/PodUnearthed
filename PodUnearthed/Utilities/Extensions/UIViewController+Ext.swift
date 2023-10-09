@@ -24,3 +24,41 @@ extension UIViewController {
         }
     }
 }
+
+// MARK: - Manage Loading View
+extension UIViewController {
+    func manageLoadingActivity(isLoading: Bool) {
+        if isLoading {
+            showLoadingActivity()
+        } else {
+            hideLoadingActivity()
+        }
+    }
+    
+    func showLoadingActivity() {
+        self.view.makeToastActivity(.center)
+    }
+    
+    func hideLoadingActivity() {
+        self.view.hideToastActivity()
+    }
+    
+    // No User Interaction
+    func manageLoadingActivityNoInteraction(isLoading: Bool) {
+        if isLoading {
+            showLoadingActivityNoInteraction()
+        } else {
+            hideLoadingActivityNoInteraction()
+        }
+    }
+    
+    func showLoadingActivityNoInteraction() {
+        self.view.makeToastActivity(.center)
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    func hideLoadingActivityNoInteraction() {
+        self.view.hideToastActivity()
+        self.view.isUserInteractionEnabled = true
+    }
+}

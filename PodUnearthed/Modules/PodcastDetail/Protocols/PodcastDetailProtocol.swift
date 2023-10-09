@@ -9,11 +9,13 @@ import UIKit
 import FeedKit
 
 protocol PodcastDetailPresenterToViewProtocol: AnyObject {
+    func showLoading(isLoading: Bool)
     func showPodcastDetail()
     func showErrorPodcastDetail()
 }
 
 protocol PodcastDetailInteractorToPresenterProtocol: AnyObject {
+    func isLoading(isLoading: Bool)
     func podcastDetailFetched()
     func podcastDetailFetchedFailed()
 }

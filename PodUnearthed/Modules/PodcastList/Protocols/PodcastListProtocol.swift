@@ -8,6 +8,7 @@
 import UIKit
 
 protocol PodcastListPresenterToViewProtocol: AnyObject {
+    func showLoading(isLoading: Bool)
     func showPodcastComedy()
     func showErrorPodcastComedy()
     func showPodcastHorror()
@@ -17,6 +18,7 @@ protocol PodcastListPresenterToViewProtocol: AnyObject {
 }
 
 protocol PodcastListInteractorToPresenterProtocol: AnyObject {
+    func isLoading(isLoading: Bool)
     func podcastComedyFetched()
     func podcastComedyFetchedFailed()
     func podcastHorrorFetched()

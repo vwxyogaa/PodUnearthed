@@ -16,10 +16,12 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     
     // MARK: - Methods
     func fetchPodcastComedy() {
+        self.presenter?.isLoading(isLoading: true)
         let url = Constants.baseUrl + "/search?term=comedy&country=id&limit=10"
         AF.request(url, method: .get)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
+                self.presenter?.isLoading(isLoading: false)
                 switch response.result {
                 case .success(let value):
                     let podcastList = value.results.map({ DataMapper.mapPodcastListResponseToModel(data: $0) })
@@ -33,10 +35,12 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     }
     
     func fetchPodcastHorror() {
+        self.presenter?.isLoading(isLoading: true)
         let url = Constants.baseUrl + "/search?term=horror&country=id&limit=10"
         AF.request(url, method: .get)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
+                self.presenter?.isLoading(isLoading: false)
                 switch response.result {
                 case .success(let value):
                     let podcastList = value.results.map({ DataMapper.mapPodcastListResponseToModel(data: $0) })
@@ -50,10 +54,12 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     }
     
     func fetchPodcastSport() {
+        self.presenter?.isLoading(isLoading: true)
         let url = Constants.baseUrl + "/search?term=sport&country=id&limit=10"
         AF.request(url, method: .get)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
+                self.presenter?.isLoading(isLoading: false)
                 switch response.result {
                 case .success(let value):
                     let podcastList = value.results.map({ DataMapper.mapPodcastListResponseToModel(data: $0) })
