@@ -20,10 +20,12 @@ class PodcastDetailInteractor: PodcastDetailPresenterToInteractorProtocol {
     // MARK: - Methods
     func fetchPodcastDetail() {
         if let feedUrl = podcastDetail?.feedUrl {
+            self.presenter?.isLoading(isLoading: true)
             let url = URL(string: feedUrl)!
             let parser = FeedParser(URL: url)
             parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { result in
                 DispatchQueue.main.async {
+                    self.presenter?.isLoading(isLoading: false)
                     switch result {
                     case .success(let success):
                         self.rssFeed = success.rssFeed

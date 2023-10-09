@@ -50,6 +50,10 @@ class PodcastListPresenter: PodcastListViewToPresenterProtocol {
 
 // MARK: - PodcastListInteractorToPresenterProtocol
 extension PodcastListPresenter: PodcastListInteractorToPresenterProtocol {
+    func isLoading(isLoading: Bool) {
+        view?.showLoading(isLoading: isLoading)
+    }
+    
     // MARK: - Comedy
     func podcastComedyFetched() {
         view?.showPodcastComedy()

@@ -29,6 +29,10 @@ class PodcastDetailPresenter: PodcastDetailViewToPresenterProtocol {
 
 // MARK: - PodcastDetailInteractorToPresenterProtocol
 extension PodcastDetailPresenter: PodcastDetailInteractorToPresenterProtocol {
+    func isLoading(isLoading: Bool) {
+        view?.showLoading(isLoading: isLoading)
+    }
+    
     func podcastDetailFetched() {
         view?.showPodcastDetail()
     }

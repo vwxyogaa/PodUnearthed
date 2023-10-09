@@ -116,17 +116,20 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch collectionView {
         case comedyListCollectionView:
-            guard let comedy = presenter?.getPodcastComedy(index: indexPath.row) else { return }
-            let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: comedy)
-            navigationController?.pushViewController(podcastDetailViewController, animated: true)
+            if  let comedy = presenter?.getPodcastComedy(index: indexPath.row) {
+                let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: comedy)
+                navigationController?.pushViewController(podcastDetailViewController, animated: true)
+            }
         case horrorListCollectionView:
-            guard let horror = presenter?.getPodcastHorror(index: indexPath.row) else { return }
-            let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: horror)
-            navigationController?.pushViewController(podcastDetailViewController, animated: true)
+            if  let horror = presenter?.getPodcastHorror(index: indexPath.row) {
+                let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: horror)
+                navigationController?.pushViewController(podcastDetailViewController, animated: true)
+            }
         case sportListCollectionView:
-            guard let sport = presenter?.getPodcastSport(index: indexPath.row) else { return }
-            let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: sport)
-            navigationController?.pushViewController(podcastDetailViewController, animated: true)
+            if let sport = presenter?.getPodcastSport(index: indexPath.row) {
+                let podcastDetailViewController = PodcastDetailRouter.createPodcastDetailModule(with: sport)
+                navigationController?.pushViewController(podcastDetailViewController, animated: true)
+            }
         default:
             break
         }
@@ -155,6 +158,21 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
 
 // MARK: - PodcastListPresenterToViewProtocol
 extension PodcastListViewController: PodcastListPresenterToViewProtocol {
+    func showLoading(isLoading: Bool) {
+        switch isLoading {
+        case false:
+            self.manageLoadingActivity(isLoading: false)
+            self.comedyListCollectionView.isHidden = false
+            self.horrorListCollectionView.isHidden = false
+            self.sportListCollectionView.isHidden = false
+        case true:
+            self.manageLoadingActivity(isLoading: true)
+            self.comedyListCollectionView.isHidden = true
+            self.horrorListCollectionView.isHidden = true
+            self.sportListCollectionView.isHidden = true
+        }
+    }
+    
     // MARK: - Comedy
     func showPodcastComedy() {
         comedyListCollectionView.reloadData()
