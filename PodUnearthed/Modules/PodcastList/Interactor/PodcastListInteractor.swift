@@ -17,8 +17,9 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     // MARK: - Methods
     func fetchPodcastComedy() {
         self.presenter?.isLoading(isLoading: true)
-        let url = Constants.baseUrl + "/search?term=comedy&country=id&limit=10"
-        AF.request(url, method: .get)
+        let parameter: [String: Any] = ["term": "comedy", "country": "id", "media": "podcast", "limit": "10"]
+        let url = Constants.baseUrl + "/search"
+        AF.request(url, method: .get, parameters: parameter)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
                 self.presenter?.isLoading(isLoading: false)
@@ -28,7 +29,7 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
                     self.podcastComedy = podcastList
                     self.presenter?.podcastComedyFetched()
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
                     self.presenter?.podcastComedyFetchedFailed()
                 }
             }
@@ -36,8 +37,9 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     
     func fetchPodcastHorror() {
         self.presenter?.isLoading(isLoading: true)
-        let url = Constants.baseUrl + "/search?term=horror&country=id&limit=10"
-        AF.request(url, method: .get)
+        let parameter: [String: Any] = ["term": "horror", "country": "id", "media": "podcast", "limit": "10"]
+        let url = Constants.baseUrl + "/search"
+        AF.request(url, method: .get, parameters: parameter)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
                 self.presenter?.isLoading(isLoading: false)
@@ -47,7 +49,7 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
                     self.podcastHorror = podcastList
                     self.presenter?.podcastHorrorFetched()
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
                     self.presenter?.podcastHorrorFetchedFailed()
                 }
             }
@@ -55,8 +57,9 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
     
     func fetchPodcastSport() {
         self.presenter?.isLoading(isLoading: true)
-        let url = Constants.baseUrl + "/search?term=sport&country=id&limit=10"
-        AF.request(url, method: .get)
+        let parameter: [String: Any] = ["term": "sport", "country": "id", "media": "podcast", "limit": "10"]
+        let url = Constants.baseUrl + "/search"
+        AF.request(url, method: .get, parameters: parameter)
             .validate()
             .responseDecodable(of: PodcastListResponse.self) { response in
                 self.presenter?.isLoading(isLoading: false)
@@ -66,7 +69,7 @@ class PodcastListInteractor: PodcastListPresenterToInteractorProtocol {
                     self.podcastSport = podcastList
                     self.presenter?.podcastSportFetched()
                 case .failure(let error):
-                    print(error)
+                    print(error.localizedDescription)
                     self.presenter?.podcastSportFetchedFailed()
                 }
             }

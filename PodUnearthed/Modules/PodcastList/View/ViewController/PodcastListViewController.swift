@@ -35,7 +35,9 @@ class PodcastListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Podcast Unearthed"
+        shouldHideBackButtonText = true
         initViews()
+        initListener()
         initColectionView()
         presenter?.updateView()
     }
@@ -44,6 +46,10 @@ class PodcastListViewController: UIViewController {
     private func initViews() {
         scrollView.refreshControl = refreshControl
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    private func initListener() {
+        podcastSearchBar.delegate = self
     }
     
     private func initColectionView() {
@@ -153,6 +159,15 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
             break
         }
         return CGSize(width: 0, height: 0)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension PodcastListViewController: UISearchBarDelegate {
+    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        let searchViewController = SearchRouter.createSearchModule()
+        navigationController?.pushViewController(searchViewController, animated: true)
+        return false
     }
 }
 

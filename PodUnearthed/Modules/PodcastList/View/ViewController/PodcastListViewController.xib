@@ -30,18 +30,21 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dKK-vy-fVg">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dKK-vy-fVg">
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="F2U-tH-j15">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="42"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="M3i-iB-xLM"/>
+                            </constraints>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="D6Z-CK-35k"/>
                             </connections>
                         </searchBar>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oH-ym-xr1">
-                            <rect key="frame" x="0.0" y="56" width="393" height="703"/>
+                            <rect key="frame" x="0.0" y="50" width="393" height="709"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YyW-MK-zpZ">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="808"/>
