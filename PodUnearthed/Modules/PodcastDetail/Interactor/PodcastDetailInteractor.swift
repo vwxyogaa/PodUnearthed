@@ -31,7 +31,7 @@ class PodcastDetailInteractor: PodcastDetailPresenterToInteractorProtocol {
                         self.rssFeed = success.rssFeed
                         self.presenter?.podcastDetailFetched()
                     case .failure(let failure):
-                        print(failure)
+                        print(failure.localizedDescription)
                         self.presenter?.podcastDetailFetchedFailed()
                     }
                 }

@@ -45,6 +45,14 @@
 		BC4A201E2AD0160F00A1FDD5 /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A201D2AD0160F00A1FDD5 /* UITableView+Ext.swift */; };
 		BC4A20202AD018A800A1FDD5 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A201F2AD018A800A1FDD5 /* UIViewController+Ext.swift */; };
 		BC4A20262AD3E68700A1FDD5 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A20252AD3E68600A1FDD5 /* Toast.swift */; };
+		BC4A203A2AD40FBA00A1FDD5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A20382AD40FBA00A1FDD5 /* SearchViewController.swift */; };
+		BC4A203B2AD40FBA00A1FDD5 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4A20392AD40FBA00A1FDD5 /* SearchViewController.xib */; };
+		BC4A203D2AD40FD500A1FDD5 /* SearchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A203C2AD40FD500A1FDD5 /* SearchProtocol.swift */; };
+		BC4A203F2AD4108100A1FDD5 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A203E2AD4108100A1FDD5 /* SearchInteractor.swift */; };
+		BC4A20412AD4119B00A1FDD5 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A20402AD4119B00A1FDD5 /* SearchPresenter.swift */; };
+		BC4A20432AD4120C00A1FDD5 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A20422AD4120C00A1FDD5 /* SearchRouter.swift */; };
+		BC4A204B2AD413FD00A1FDD5 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A20492AD413FD00A1FDD5 /* PodcastTableViewCell.swift */; };
+		BC4A204C2AD413FD00A1FDD5 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC4A204A2AD413FD00A1FDD5 /* PodcastTableViewCell.xib */; };
 		F66A076763619D9F70DDBFDB /* Pods_PodUnearthed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6582398EF759B793F50FCD /* Pods_PodUnearthed.framework */; };
 /* End PBXBuildFile section */
 
@@ -114,6 +122,14 @@
 		BC4A201D2AD0160F00A1FDD5 /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
 		BC4A201F2AD018A800A1FDD5 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		BC4A20252AD3E68600A1FDD5 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		BC4A20382AD40FBA00A1FDD5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BC4A20392AD40FBA00A1FDD5 /* SearchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
+		BC4A203C2AD40FD500A1FDD5 /* SearchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchProtocol.swift; sourceTree = "<group>"; };
+		BC4A203E2AD4108100A1FDD5 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		BC4A20402AD4119B00A1FDD5 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		BC4A20422AD4120C00A1FDD5 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		BC4A20492AD413FD00A1FDD5 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
+		BC4A204A2AD413FD00A1FDD5 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		FF6582398EF759B793F50FCD /* Pods_PodUnearthed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodUnearthed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,6 +257,7 @@
 		BC3CECAA2ACC4F2A00A330A9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BC4A20312AD40F8200A1FDD5 /* Search */,
 				BC4A1FFA2ACFFA3100A1FDD5 /* PodcastDetail */,
 				BC3CECAD2ACC4FC500A330A9 /* PodcastList */,
 			);
@@ -432,6 +449,77 @@
 			path = LibraryThirdParty;
 			sourceTree = "<group>";
 		};
+		BC4A20312AD40F8200A1FDD5 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A20362AD40FA000A1FDD5 /* View */,
+				BC4A20352AD40F9D00A1FDD5 /* Interactor */,
+				BC4A20342AD40F9600A1FDD5 /* Presenter */,
+				BC4A20332AD40F9200A1FDD5 /* Router */,
+				BC4A20322AD40F8A00A1FDD5 /* Protocols */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BC4A20322AD40F8A00A1FDD5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A203C2AD40FD500A1FDD5 /* SearchProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BC4A20332AD40F9200A1FDD5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A20422AD4120C00A1FDD5 /* SearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BC4A20342AD40F9600A1FDD5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A20402AD4119B00A1FDD5 /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BC4A20352AD40F9D00A1FDD5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A203E2AD4108100A1FDD5 /* SearchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		BC4A20362AD40FA000A1FDD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A20442AD413D400A1FDD5 /* Cell */,
+				BC4A20372AD40FA700A1FDD5 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC4A20372AD40FA700A1FDD5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A20382AD40FBA00A1FDD5 /* SearchViewController.swift */,
+				BC4A20392AD40FBA00A1FDD5 /* SearchViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		BC4A20442AD413D400A1FDD5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC4A20492AD413FD00A1FDD5 /* PodcastTableViewCell.swift */,
+				BC4A204A2AD413FD00A1FDD5 /* PodcastTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -543,10 +631,12 @@
 			files = (
 				BC3CECB12ACC501600A330A9 /* PodcastListViewController.xib in Resources */,
 				BC4A20142AD00A4700A1FDD5 /* EpisodeTableViewCell.xib in Resources */,
+				BC4A204C2AD413FD00A1FDD5 /* PodcastTableViewCell.xib in Resources */,
 				BC3CEC852ACC4CAC00A330A9 /* LaunchScreen.storyboard in Resources */,
 				BC4A20042ACFFA5F00A1FDD5 /* PodcastDetailViewController.xib in Resources */,
 				BC3CEC822ACC4CAC00A330A9 /* Assets.xcassets in Resources */,
 				BC4A1FF02ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib in Resources */,
+				BC4A203B2AD40FBA00A1FDD5 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -678,6 +768,8 @@
 				BC3CECB82ACC506600A330A9 /* PodcastListInteractor.swift in Sources */,
 				BC4A200F2ACFFECE00A1FDD5 /* PodcastDetailRouter.swift in Sources */,
 				BC4A201C2AD0145300A1FDD5 /* Date+Ext.swift in Sources */,
+				BC4A204B2AD413FD00A1FDD5 /* PodcastTableViewCell.swift in Sources */,
+				BC4A20432AD4120C00A1FDD5 /* SearchRouter.swift in Sources */,
 				BC4A1FE82ACEA9B600A1FDD5 /* PodcastListModel.swift in Sources */,
 				BC3CEC762ACC4CAB00A330A9 /* AppDelegate.swift in Sources */,
 				BC3CECBA2ACC506D00A330A9 /* PodcastListPresenter.swift in Sources */,
@@ -691,11 +783,15 @@
 				BC4A20202AD018A800A1FDD5 /* UIViewController+Ext.swift in Sources */,
 				BC4A20182AD0103200A1FDD5 /* TimeInterval+Ext.swift in Sources */,
 				BC4A20262AD3E68700A1FDD5 /* Toast.swift in Sources */,
+				BC4A20412AD4119B00A1FDD5 /* SearchPresenter.swift in Sources */,
 				BC4A20062ACFFA7500A1FDD5 /* PodcastDetailProtocol.swift in Sources */,
 				BC3CECBC2ACC509300A330A9 /* PodcastListResponse.swift in Sources */,
 				BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */,
 				BC4A20132AD00A4700A1FDD5 /* EpisodeTableViewCell.swift in Sources */,
 				BC4A20162AD00C1000A1FDD5 /* String+Ext.swift in Sources */,
+				BC4A203A2AD40FBA00A1FDD5 /* SearchViewController.swift in Sources */,
+				BC4A203D2AD40FD500A1FDD5 /* SearchProtocol.swift in Sources */,
+				BC4A203F2AD4108100A1FDD5 /* SearchInteractor.swift in Sources */,
 				BC4A1FF92ACFF86A00A1FDD5 /* Constants.swift in Sources */,
 				BC4A1FEB2ACEAE6300A1FDD5 /* DataMapper.swift in Sources */,
 				BC4A20032ACFFA5F00A1FDD5 /* PodcastDetailViewController.swift in Sources */,
