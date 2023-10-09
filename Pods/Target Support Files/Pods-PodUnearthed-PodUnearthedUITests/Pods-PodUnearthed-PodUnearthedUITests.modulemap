@@ -1,6 +1,0 @@
-framework module Pods_PodUnearthed_PodUnearthedUITests {
-  umbrella header "Pods-PodUnearthed-PodUnearthedUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
