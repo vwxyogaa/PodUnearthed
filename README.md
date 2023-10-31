@@ -10,7 +10,7 @@ VIPER(View Interactor Presenter Entity Router)
 * [Alamofire](https://github.com/Alamofire/Alamofire)
 * [Kingfisher](https://github.com/onevcat/Kingfisher)
 * [Netfox](https://github.com/kasketis/netfox)
-* [FeedKit]([https://github.com/ReactiveX/RxSwift](https://github.com/nmdias/FeedKit))
+* [FeedKit]([https://github.com/ReactiveX/RxSwift](https://github.com/nmdias/FeedKit)
 
 ### API ###
-* [iTunes Search API]([https://www.themoviedb.org/documentation/api](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html)https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html)
+* [iTunes Search API](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html)https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html)
