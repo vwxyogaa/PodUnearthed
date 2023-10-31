@@ -17,6 +17,9 @@ class PodcastDetailViewController: UIViewController {
     @IBOutlet weak var episodeTableView: UITableView!
     @IBOutlet weak var episodeTableViewHeightConstraint: NSLayoutConstraint!
     
+    // MARK: - Views
+    private lazy var playerView = PlayerView()
+    
     // MARK: - Properties
     var presenter: PodcastDetailViewToPresenterProtocol?
     
@@ -25,8 +28,14 @@ class PodcastDetailViewController: UIViewController {
         super.viewDidLoad()
         shouldHideBackButtonText = true
         initViews()
+        initPlayerView()
         initTableView()
         presenter?.updateView()
+        NotificationCenter.default.addObserver(self, selector: #selector(playerProviderStateDidChange), name: .PlayerProviderStateDidChange, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .PlayerProviderStateDidChange, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +61,17 @@ class PodcastDetailViewController: UIViewController {
         artworkImageView.layer.masksToBounds = true
     }
     
+    private func initPlayerView() {
+        view.addSubview(playerView)
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            playerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            playerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0),
+            playerView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
+        ])
+        playerView.isHidden = true
+    }
+    
     private func initTableView() {
         episodeTableViewHeightConstraint.constant = 0
         episodeTableView.register(UINib(nibName: "EpisodeTableViewCell", bundle: nil), forCellReuseIdentifier: "EpisodeTableViewCell")
@@ -61,6 +81,35 @@ class PodcastDetailViewController: UIViewController {
     
     private func updateTableViewContentSize(size: CGFloat) {
         episodeTableViewHeightConstraint.constant = size
+    }
+    
+    private func configureContent() {
+        let podcast = presenter?.getPodcastDetail()
+        if let imageUrl = podcast?.artworkUrl600, !imageUrl.isEmpty {
+            self.artworkImageView.loadImage(uri: imageUrl)
+        } else {
+            self.artworkImageView.backgroundColor = .darkGray
+        }
+        collectionNameLabel.text = podcast?.collectionName
+        artistNameLabel.text = podcast?.artistName
+        
+        let rssFeed = presenter?.getRssFeed()
+        descriptionLabel.attributedText = rssFeed?.description?
+            .convertHtmlToAttributedStringWithCSS(
+                font: UIFont.systemFont(ofSize: 14, weight: .regular),
+                cssColor: "#EEEEEE",
+                lineHeight: 18,
+                cssTextAlign: "left"
+            )
+        categoriesLabel.text = rssFeed?.iTunes?.iTunesCategories?
+            .compactMap({ $0.attributes?.text })
+            .joined(separator: " • ")
+    }
+    
+    // MARK: - Actions
+    @objc 
+    private func playerProviderStateDidChange() {
+        episodeTableView.reloadData()
     }
 }
 
@@ -78,6 +127,7 @@ extension PodcastDetailViewController: UITableViewDataSource, UITableViewDelegat
         let description = episode.description
         let duration = episode.iTunes?.iTunesDuration?.string
         cell.configureContent(imageUrl: imageUrl, pubDate: pubDateLabel, title: title, description: description, duration: duration)
+        cell.delegate = self
         return cell
     }
     
@@ -113,35 +163,13 @@ extension PodcastDetailViewController: PodcastDetailPresenterToViewProtocol {
         switch isLoading {
         case false:
             self.manageLoadingActivity(isLoading: false)
-            self.episodeTableView.isHidden = false
         case true:
             self.manageLoadingActivity(isLoading: true)
-            self.episodeTableView.isHidden = true
         }
     }
     
     func showPodcastDetail() {
-        let podcast = presenter?.getPodcastDetail()
-        if let imageUrl = podcast?.artworkUrl600, !imageUrl.isEmpty {
-            self.artworkImageView.loadImage(uri: imageUrl)
-        } else {
-            self.artworkImageView.backgroundColor = .darkGray
-        }
-        collectionNameLabel.text = podcast?.collectionName
-        artistNameLabel.text = podcast?.artistName
-        
-        let rssFeed = presenter?.getRssFeed()
-        descriptionLabel.attributedText = rssFeed?.description?
-            .convertHtmlToAttributedStringWithCSS(
-                font: UIFont.systemFont(ofSize: 14, weight: .regular),
-                cssColor: "#EEEEEE",
-                lineHeight: 18,
-                cssTextAlign: "left"
-            )
-        categoriesLabel.text = rssFeed?.iTunes?.iTunesCategories?
-            .compactMap({ $0.attributes?.text })
-            .joined(separator: " • ")
-        
+        configureContent()
         episodeTableView.reloadData()
     }
     
@@ -149,5 +177,22 @@ extension PodcastDetailViewController: PodcastDetailPresenterToViewProtocol {
         let alert = UIAlertController(title: "Oops!", message: "Failed fetching podcast detail", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - EpisodeTableViewCellDelegate
+extension PodcastDetailViewController: EpisodeTableViewCellDelegate {
+    func playButtonTapped(_ cell: EpisodeTableViewCell) {
+        guard let rssFeed = presenter?.getRssFeed() else { return }
+        playerView.isHidden = false
+        let playerView = PlayerViewRouter.createPlayerViewModule(with: rssFeed, playbackLikelyToKeepUpContext: presenter?.interactor?.playbackLikelyToKeepUpContext ?? 0, podcastNowPlayingInfo: presenter?.interactor?.podcastNowPlayingInfo ?? [:], isAVAudioSessionActive: presenter?.interactor?.isAVAudioSessionActive ?? false, state: presenter?.interactor?.state ?? .paused)
+        if let indexPath = episodeTableView.indexPath(for: cell) {
+            if presenter?.interactor?.playlist == rssFeed,
+               presenter?.interactor?.currentIndex == indexPath.row {
+                presenter?.interactor?.podcastPlay()
+            } else {
+                presenter?.interactor?.launchPodcastPlaylist(playlist: rssFeed, index: indexPath.row)
+            }
+        }
     }
 }

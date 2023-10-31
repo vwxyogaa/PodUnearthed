@@ -90,7 +90,7 @@ extension PodcastListViewController: UICollectionViewDataSource, UICollectionVie
         case comedyListCollectionView:
             return presenter?.getPodcastComedyCount() ?? 0
         case horrorListCollectionView:
-            return presenter?.getPodcastComedyCount() ?? 0
+            return presenter?.getPodcastHorrorCount() ?? 0
         case sportListCollectionView:
             return presenter?.getPodcastSportCount() ?? 0
         default:
@@ -177,14 +177,8 @@ extension PodcastListViewController: PodcastListPresenterToViewProtocol {
         switch isLoading {
         case false:
             self.manageLoadingActivity(isLoading: false)
-            self.comedyListCollectionView.isHidden = false
-            self.horrorListCollectionView.isHidden = false
-            self.sportListCollectionView.isHidden = false
         case true:
             self.manageLoadingActivity(isLoading: true)
-            self.comedyListCollectionView.isHidden = true
-            self.horrorListCollectionView.isHidden = true
-            self.sportListCollectionView.isHidden = true
         }
     }
     

@@ -8,7 +8,12 @@
 import UIKit
 import FeedKit
 
+protocol EpisodeTableViewCellDelegate {
+    func playButtonTapped(_ cell: EpisodeTableViewCell)
+}
+
 class EpisodeTableViewCell: UITableViewCell {
+    // MARK: - IBOutlets
     @IBOutlet weak var episodeImageView: UIImageView!
     @IBOutlet weak var pubDateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,6 +21,10 @@ class EpisodeTableViewCell: UITableViewCell {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var durationLabel: UILabel!
     
+    // MARK: - Properties
+    var delegate: EpisodeTableViewCellDelegate?
+    
+    // MARK: - Lifecycles
     override func awakeFromNib() {
         super.awakeFromNib()
         initViews()
@@ -25,12 +34,14 @@ class EpisodeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    // MARK: - Methods
     private func initViews() {
         episodeImageView.layer.cornerRadius = 12
         episodeImageView.layer.masksToBounds = true
         
         playButton.layer.cornerRadius = playButton.frame.height / 2
         playButton.layer.masksToBounds = true
+        playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
     }
     
     func configureContent(imageUrl: String?, pubDate: String?, title: String?, description: String?, duration: String?) {
@@ -43,12 +54,18 @@ class EpisodeTableViewCell: UITableViewCell {
         pubDateLabel.text = date ?? "-"
         titleLabel.text = title ?? "-"
         descriptionLabel.attributedText = description?
-          .convertHtmlToAttributedStringWithCSS(
-            font: UIFont.systemFont(ofSize: 12, weight: .regular),
-            cssColor: "#EEEEEE",
-            lineHeight: 16,
-            cssTextAlign: "left"
-          )
+            .convertHtmlToAttributedStringWithCSS(
+                font: UIFont.systemFont(ofSize: 12, weight: .regular),
+                cssColor: "#EEEEEE",
+                lineHeight: 16,
+                cssTextAlign: "left"
+            )
         durationLabel.text = duration ?? "-"
+    }
+    
+    // MARK: - Actions
+    @objc
+    private func playButtonTapped() {
+        delegate?.playButtonTapped(self)
     }
 }

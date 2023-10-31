@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		5D96151BC1C26D67550200B6 /* Pods_PodUnearthed_PodUnearthedUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E300C05232E727509E68CFA /* Pods_PodUnearthed_PodUnearthedUITests.framework */; };
 		87CF0FA822844B02975B60BC /* Pods_PodUnearthedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B605B7181EE5C531E2C5357 /* Pods_PodUnearthedTests.framework */; };
+		BC0564522AEFC0A400E8BD57 /* NSNotificationName+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564512AEFC0A400E8BD57 /* NSNotificationName+Ext.swift */; };
+		BC0564552AEFC25000E8BD57 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0564542AEFC25000E8BD57 /* PlayerView.xib */; };
+		BC0564572AEFC25800E8BD57 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564562AEFC25800E8BD57 /* PlayerView.swift */; };
+		BC0564602AEFC45100E8BD57 /* PlayerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC05645F2AEFC45100E8BD57 /* PlayerViewProtocol.swift */; };
+		BC0564622AEFC45A00E8BD57 /* PlayerViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564612AEFC45A00E8BD57 /* PlayerViewRouter.swift */; };
+		BC0564642AEFC46000E8BD57 /* PlayerViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564632AEFC46000E8BD57 /* PlayerViewPresenter.swift */; };
+		BC0564662AEFC46500E8BD57 /* PlayerViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564652AEFC46500E8BD57 /* PlayerViewInteractor.swift */; };
+		BC0564682AEFD92E00E8BD57 /* RSSFeedItem+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564672AEFD92E00E8BD57 /* RSSFeedItem+Ext.swift */; };
+		BC05646A2AEFDEB700E8BD57 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0564692AEFDEB700E8BD57 /* UIView+Ext.swift */; };
 		BC3CEC762ACC4CAB00A330A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC752ACC4CAB00A330A9 /* AppDelegate.swift */; };
 		BC3CEC782ACC4CAB00A330A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC772ACC4CAB00A330A9 /* SceneDelegate.swift */; };
 		BC3CEC802ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC3CEC7E2ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld */; };
@@ -82,6 +91,15 @@
 		8B605B7181EE5C531E2C5357 /* Pods_PodUnearthedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodUnearthedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC1CFBA8E74C00EC6DD9ACF /* Pods-PodUnearthedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodUnearthedTests.debug.xcconfig"; path = "Target Support Files/Pods-PodUnearthedTests/Pods-PodUnearthedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B6C358DA85BF09960A816C95 /* Pods-PodUnearthed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodUnearthed.release.xcconfig"; path = "Target Support Files/Pods-PodUnearthed/Pods-PodUnearthed.release.xcconfig"; sourceTree = "<group>"; };
+		BC0564512AEFC0A400E8BD57 /* NSNotificationName+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNotificationName+Ext.swift"; sourceTree = "<group>"; };
+		BC0564542AEFC25000E8BD57 /* PlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		BC0564562AEFC25800E8BD57 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		BC05645F2AEFC45100E8BD57 /* PlayerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewProtocol.swift; sourceTree = "<group>"; };
+		BC0564612AEFC45A00E8BD57 /* PlayerViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewRouter.swift; sourceTree = "<group>"; };
+		BC0564632AEFC46000E8BD57 /* PlayerViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewPresenter.swift; sourceTree = "<group>"; };
+		BC0564652AEFC46500E8BD57 /* PlayerViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewInteractor.swift; sourceTree = "<group>"; };
+		BC0564672AEFD92E00E8BD57 /* RSSFeedItem+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RSSFeedItem+Ext.swift"; sourceTree = "<group>"; };
+		BC0564692AEFDEB700E8BD57 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		BC3CEC722ACC4CAB00A330A9 /* PodUnearthed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodUnearthed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC3CEC752ACC4CAB00A330A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC3CEC772ACC4CAB00A330A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +202,67 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BC0564532AEFC24200E8BD57 /* PlayerView */ = {
+			isa = PBXGroup;
+			children = (
+				BC0564582AEFC40B00E8BD57 /* View */,
+				BC05645D2AEFC42500E8BD57 /* Interactor */,
+				BC05645C2AEFC42000E8BD57 /* Presenter */,
+				BC05645B2AEFC41D00E8BD57 /* Router */,
+				BC05645A2AEFC41A00E8BD57 /* Protocols */,
+			);
+			path = PlayerView;
+			sourceTree = "<group>";
+		};
+		BC0564582AEFC40B00E8BD57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC0564592AEFC41100E8BD57 /* View */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC0564592AEFC41100E8BD57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC0564542AEFC25000E8BD57 /* PlayerView.xib */,
+				BC0564562AEFC25800E8BD57 /* PlayerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC05645A2AEFC41A00E8BD57 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BC05645F2AEFC45100E8BD57 /* PlayerViewProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BC05645B2AEFC41D00E8BD57 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BC0564612AEFC45A00E8BD57 /* PlayerViewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		BC05645C2AEFC42000E8BD57 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BC0564632AEFC46000E8BD57 /* PlayerViewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		BC05645D2AEFC42500E8BD57 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BC0564652AEFC46500E8BD57 /* PlayerViewInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		BC3CEC692ACC4CAB00A330A9 = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +336,7 @@
 		BC3CECAA2ACC4F2A00A330A9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BC0564532AEFC24200E8BD57 /* PlayerView */,
 				BC4A20312AD40F8200A1FDD5 /* Search */,
 				BC4A1FFA2ACFFA3100A1FDD5 /* PodcastDetail */,
 				BC3CECAD2ACC4FC500A330A9 /* PodcastList */,
@@ -366,6 +446,9 @@
 				BC4A201B2AD0145300A1FDD5 /* Date+Ext.swift */,
 				BC4A201D2AD0160F00A1FDD5 /* UITableView+Ext.swift */,
 				BC4A201F2AD018A800A1FDD5 /* UIViewController+Ext.swift */,
+				BC0564692AEFDEB700E8BD57 /* UIView+Ext.swift */,
+				BC0564512AEFC0A400E8BD57 /* NSNotificationName+Ext.swift */,
+				BC0564672AEFD92E00E8BD57 /* RSSFeedItem+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -637,6 +720,7 @@
 				BC3CEC822ACC4CAC00A330A9 /* Assets.xcassets in Resources */,
 				BC4A1FF02ACEB62200A1FDD5 /* PodcastCollectionViewCell.xib in Resources */,
 				BC4A203B2AD40FBA00A1FDD5 /* SearchViewController.xib in Resources */,
+				BC0564552AEFC25000E8BD57 /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,28 +851,36 @@
 				BC3CEC802ACC4CAB00A330A9 /* PodUnearthed.xcdatamodeld in Sources */,
 				BC3CECB82ACC506600A330A9 /* PodcastListInteractor.swift in Sources */,
 				BC4A200F2ACFFECE00A1FDD5 /* PodcastDetailRouter.swift in Sources */,
+				BC0564522AEFC0A400E8BD57 /* NSNotificationName+Ext.swift in Sources */,
 				BC4A201C2AD0145300A1FDD5 /* Date+Ext.swift in Sources */,
 				BC4A204B2AD413FD00A1FDD5 /* PodcastTableViewCell.swift in Sources */,
 				BC4A20432AD4120C00A1FDD5 /* SearchRouter.swift in Sources */,
 				BC4A1FE82ACEA9B600A1FDD5 /* PodcastListModel.swift in Sources */,
+				BC0564682AEFD92E00E8BD57 /* RSSFeedItem+Ext.swift in Sources */,
 				BC3CEC762ACC4CAB00A330A9 /* AppDelegate.swift in Sources */,
 				BC3CECBA2ACC506D00A330A9 /* PodcastListPresenter.swift in Sources */,
 				BC4A201E2AD0160F00A1FDD5 /* UITableView+Ext.swift in Sources */,
+				BC05646A2AEFDEB700E8BD57 /* UIView+Ext.swift in Sources */,
 				BC4A200D2ACFFDEB00A1FDD5 /* PodcastDetailPresenter.swift in Sources */,
 				BC4A1FF72ACECA5500A1FDD5 /* UIImageView+Ext.swift in Sources */,
 				BC3CEC782ACC4CAB00A330A9 /* SceneDelegate.swift in Sources */,
 				BC3CECBE2ACC509B00A330A9 /* PodcastListRouter.swift in Sources */,
 				BC4A201A2AD0112A00A1FDD5 /* SharedEnum.swift in Sources */,
+				BC0564622AEFC45A00E8BD57 /* PlayerViewRouter.swift in Sources */,
 				BC4A1FEF2ACEB62200A1FDD5 /* PodcastCollectionViewCell.swift in Sources */,
+				BC0564602AEFC45100E8BD57 /* PlayerViewProtocol.swift in Sources */,
 				BC4A20202AD018A800A1FDD5 /* UIViewController+Ext.swift in Sources */,
 				BC4A20182AD0103200A1FDD5 /* TimeInterval+Ext.swift in Sources */,
 				BC4A20262AD3E68700A1FDD5 /* Toast.swift in Sources */,
 				BC4A20412AD4119B00A1FDD5 /* SearchPresenter.swift in Sources */,
 				BC4A20062ACFFA7500A1FDD5 /* PodcastDetailProtocol.swift in Sources */,
+				BC0564642AEFC46000E8BD57 /* PlayerViewPresenter.swift in Sources */,
 				BC3CECBC2ACC509300A330A9 /* PodcastListResponse.swift in Sources */,
+				BC0564662AEFC46500E8BD57 /* PlayerViewInteractor.swift in Sources */,
 				BC3CECC22ACC50B400A330A9 /* PodcastListProtocol.swift in Sources */,
 				BC4A20132AD00A4700A1FDD5 /* EpisodeTableViewCell.swift in Sources */,
 				BC4A20162AD00C1000A1FDD5 /* String+Ext.swift in Sources */,
+				BC0564572AEFC25800E8BD57 /* PlayerView.swift in Sources */,
 				BC4A203A2AD40FBA00A1FDD5 /* SearchViewController.swift in Sources */,
 				BC4A203D2AD40FD500A1FDD5 /* SearchProtocol.swift in Sources */,
 				BC4A203F2AD4108100A1FDD5 /* SearchInteractor.swift in Sources */,

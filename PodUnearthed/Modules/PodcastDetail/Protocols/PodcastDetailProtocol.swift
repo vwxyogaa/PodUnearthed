@@ -24,8 +24,16 @@ protocol PodcastDetailPresenterToInteractorProtocol: AnyObject {
     var presenter: PodcastDetailInteractorToPresenterProtocol? { get set }
     var podcastDetail: PodcastListModel? { get }
     var rssFeed: RSSFeed? { get }
+    var playlist: RSSFeed? { get }
+    var currentIndex: Int? { get }
+    var playbackLikelyToKeepUpContext: Int? { get }
+    var podcastNowPlayingInfo: [String: Any] { get }
+    var isAVAudioSessionActive: Bool { get }
+    var state: PlayerViewState { get }
     
     func fetchPodcastDetail()
+    func podcastPlay()
+    func launchPodcastPlaylist(playlist: RSSFeed, index: Int)
 }
 
 protocol PodcastDetailPresenterToRouterProtocol: AnyObject {

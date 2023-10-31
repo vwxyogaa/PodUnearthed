@@ -1,47 +1,46 @@
 //
-//  PodcastDetailInteractor.swift
+//  PlayerViewInteractor.swift
 //  PodUnearthed
 //
-//  Created by Panji Yoga on 06/10/23.
+//  Created by Panji Yoga on 30/10/23.
 //
 
 import FeedKit
 import AVFoundation
-import MediaPlayer
 import Kingfisher
+import MediaPlayer
 
-enum PlayerViewState {
-    case playing
-    case paused
-    case loading(Bool)
-}
-
-class PodcastDetailInteractor: NSObject, PodcastDetailPresenterToInteractorProtocol {
+class PlayerViewInteractor: NSObject, PlayerViewPresenterToInteractorProtocol {
     // MARK: - Properties
-    var presenter: PodcastDetailInteractorToPresenterProtocol?
-    var podcastDetail: PodcastListModel?
-    var rssFeed: RSSFeed?
+    var presenter: PlayerViewInteractorToPresenterProtocol?
     var playlist: RSSFeed?
     var currentIndex: Int?
     var podcastPlayer: AVPlayer?
-    var playbackLikelyToKeepUpContext: Int?
-    var podcastNowPlayingInfo: [String: Any] = [:]
-    var isAVAudioSessionActive: Bool = false
-    var state: PlayerViewState = PlayerViewState.paused {
+    
+    private var playbackLikelyToKeepUpContext: Int = 0
+    private var podcastNowPlayingInfo: [String: Any] = [:]
+    private var isAVAudioSessionActive: Bool = false
+    private var state: PlayerViewState = PlayerViewState.paused {
         didSet {
             stateDidChange()
         }
     }
     
-    init(podcast: PodcastListModel) {
-        self.podcastDetail = podcast
+    init(playlist: RSSFeed? = nil, currentIndex: Int? = nil, podcastPlayer: AVPlayer? = nil, playbackLikelyToKeepUpContext: Int, podcastNowPlayingInfo: [String : Any], isAVAudioSessionActive: Bool, state: PlayerViewState) {
+        self.playlist = playlist
+        self.currentIndex = currentIndex
+        self.podcastPlayer = podcastPlayer
+        self.playbackLikelyToKeepUpContext = playbackLikelyToKeepUpContext
+        self.podcastNowPlayingInfo = podcastNowPlayingInfo
+        self.isAVAudioSessionActive = isAVAudioSessionActive
+        self.state = state
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
         } catch {
             print("Unable to set AVAudioSession Category: \(error)")
         }
-        podcastPlayer = AVPlayer()
-        podcastPlayer?.automaticallyWaitsToMinimizeStalling = false
+        self.podcastPlayer = AVPlayer()
+        self.podcastPlayer?.automaticallyWaitsToMinimizeStalling = false
     }
     
     deinit {
@@ -50,29 +49,6 @@ class PodcastDetailInteractor: NSObject, PodcastDetailPresenterToInteractorProto
     }
     
     // MARK: - Methods
-    func fetchPodcastDetail() {
-        if let feedUrl = podcastDetail?.feedUrl {
-            self.presenter?.isLoading(isLoading: true)
-            let url = URL(string: feedUrl)!
-            let parser = FeedParser(URL: url)
-            parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { result in
-                DispatchQueue.main.async {
-                    self.presenter?.isLoading(isLoading: false)
-                    switch result {
-                    case .success(let success):
-                        self.rssFeed = success.rssFeed
-                        self.presenter?.podcastDetailFetched()
-                    case .failure(let failure):
-                        print(failure.localizedDescription)
-                        self.presenter?.podcastDetailFetchedFailed()
-                    }
-                }
-            }
-        } else {
-            print("Feed Url is nil")
-        }
-    }
-    
     func launchPodcastPlaylist(playlist: RSSFeed, index: Int = 0) {
         self.podcastPlayer?.automaticallyWaitsToMinimizeStalling = false
         self.playlist = playlist
@@ -167,7 +143,7 @@ class PodcastDetailInteractor: NSObject, PodcastDetailPresenterToInteractorProto
 }
 
 // MARK: - Setup
-extension PodcastDetailInteractor {
+extension PlayerViewInteractor {
     private func setupAVAudioSession() {
         if !self.isAVAudioSessionActive {
             do {
@@ -206,7 +182,7 @@ extension PodcastDetailInteractor {
 }
 
 // MARK: - Podcast Controls
-extension PodcastDetailInteractor {
+extension PlayerViewInteractor {
     private func playPodcast() {
         self.podcastPlayer?.play()
         state = .playing
@@ -224,7 +200,7 @@ extension PodcastDetailInteractor {
 }
 
 // MARK: - Getters
-extension PodcastDetailInteractor {
+extension PlayerViewInteractor {
     func isPodcastPlaying() -> Bool {
         return self.podcastPlayer?.rate != 0.0
     }
@@ -239,7 +215,7 @@ extension PodcastDetailInteractor {
 }
 
 // MARK: - Actions
-extension PodcastDetailInteractor {
+extension PlayerViewInteractor {
     func podcastGoTo(time: Float) {
         self.podcastPlayer?.seek(to: CMTime(seconds: Double(time), preferredTimescale: self.podcastPlayer!.currentTime().timescale)) {_ in
             self.updateNowPlayingInfo()
@@ -289,7 +265,7 @@ extension PodcastDetailInteractor {
 }
 
 // MARK: - Command Center
-extension PodcastDetailInteractor {
+extension PlayerViewInteractor {
     private func updateCommandCenter() {
         MPRemoteCommandCenter.shared().nextTrackCommand.isEnabled = isNextPodcastAvailable()
     }
@@ -329,7 +305,7 @@ extension PodcastDetailInteractor {
 }
 
 // MARK: - Observers
-extension PodcastDetailInteractor {
+extension PlayerViewInteractor {
     override func observeValue(forKeyPath keyPath: String?,
                                of object: Any?,
                                change: [NSKeyValueChangeKey: Any]?,

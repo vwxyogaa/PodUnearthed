@@ -9,7 +9,7 @@ import UIKit
 
 class SearchPresenter: SearchViewToPresenterProtocol {
     // MARK: - Properties
-    var view: SearchPresenterToViewProtocol?
+    weak var view: SearchPresenterToViewProtocol?
     var interactor: SearchPresenterToInteractorProtocol?
     var router: SearchPresenterToRouterProtocol?
     
